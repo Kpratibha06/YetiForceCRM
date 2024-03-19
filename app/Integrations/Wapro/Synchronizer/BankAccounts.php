@@ -82,6 +82,7 @@ class BankAccounts extends \App\Integrations\Wapro\Synchronizer
 			]]);
 		}
 		$this->recordModel->set('bankaccount_status', $this->row['AKTYWNY'] ? 'PLL_ACTIVE' : 'PLL_INACTIVE');
+		$this->recordModel->set('bankName', $this->row['AKTYWNY'] ? 'PLL_ACTIVE' : 'PLL_INACTIVE');
 		$this->recordModel->set('wapro_id', $this->waproId);
 		$this->recordModel->set('multicompanyid', $multiCompanyId);
 		$this->loadFromFieldMap();
